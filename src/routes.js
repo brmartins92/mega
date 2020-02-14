@@ -5,8 +5,9 @@ mongoose.connect('mongodb+srv://megahack:megahack@cluster0-fe5hf.mongodb.net/meg
 const { Router } = require('express');
 const routes = new Router();
 const Corretora = require('./controller/Corretora');
+const Logar = require('./controller/Logar');
 
-routes.get('/', (req,res) => {
+routes.get('/gt', (req,res) => {
    
     return res.json({message:"ola mundo"})
 });
@@ -17,5 +18,7 @@ routes.post('/brokers', (req,res) => {
 
 routes.get('/corretora', Corretora.index);
 routes.post('/corretora', Corretora.store);
+
+routes.post('/logar', Logar.show);
 
 module.exports = routes;

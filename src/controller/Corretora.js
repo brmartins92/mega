@@ -7,7 +7,8 @@ module.exports = {
   },
 
   async store(request, response) {
-    const { nome,registro,estado,cidade,regiao,email,senha } = request.body;
+    const { nome,registro,estado,cidade,regiao,email,senha } = request.body; 
+  
     corretora = await Corretora.create({
       nome,
       registro,
